@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>More on Directives</title>
+</head>
+
+<body>
+    <div ng-init="people=[{name:'Kelly', city:'Belmont'}, {name:'Mike', city:'San Carlos'}]">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+            <tr ng-repeat="person in people">
+                <td>{{ person.name }}</td>
+                <td>{{ person.city }}</td>
+            </tr>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+</body>
+</html>
