@@ -27,6 +27,8 @@
         ];
     }
 
+    CustomerController.$inject = ['$scope'];
+
     angular.module('customerApp').controller('CustomerController', CustomerController);
 
 }());
