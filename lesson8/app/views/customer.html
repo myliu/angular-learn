@@ -1,0 +1,17 @@
+Filter: <input type="text" ng-model="customerFilter.name"/>
+<table>
+    <tr>
+        <th ng-click="sortBy='name';reverse=!reverse">Name</th>
+        <th ng-click="sortBy='city';reverse=!reverse">City</th>
+        <th ng-click="sortBy='orderTotal';reverse=!reverse">OrderTotal</th>
+        <th ng-click="sortBy='joined';reverse=!reverse">Joined</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
+        <td>{{ cust.name | uppercase }}</td>
+        <td>{{ cust.city }}</td>
+        <td>{{ cust.orderTotal | currency }}</td>
+        <td>{{ cust.joined | date:'yyyy-MM-dd' }}</td>
+        <td><a href="#/orders/{{ cust.id }}">View Orders</a></td>
+    </tr>
+</table>
